@@ -1,11 +1,11 @@
-<script setup>
+<script>
   import axios from 'axios';
 
   export default {
     data() {
       return{
         API_KEY: 'c42a3371088d04eb3ec89d322d1ee0db',
-        query: 'ritorno al futuro',
+        query: 'mamma ho perso aereo',
       }
     },
     methods: {
@@ -19,6 +19,9 @@
           console.log(res.data);
         })
       }
+    },
+    created(){
+      this.fetchMovies();
     }
   }
 

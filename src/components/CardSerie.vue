@@ -9,6 +9,7 @@ export default{
   data(){
     return{
       store: store,
+      // numberVote:  (parseInt(this.item.vote_average) / 2 ).toFixed(0),
     }
   },
   computed: {
@@ -17,10 +18,15 @@ export default{
     },
     addImage(){
       return `https://image.tmdb.org/t/p/w92`+this.item.poster_path;
+    },
+    numberVote(){
+      return Math.round(parseInt(this.item.vote_average) / 2) ;
     }
+  },
+  mounted(){
+    console.log(this.numberVote);
   }
 }
-
 </script>
 
 <template>
@@ -35,7 +41,7 @@ export default{
         <img height="15" v-if="srcFlag" :src="srcFlag" alt="">
         <p v-else>{{ item.original_language }}</p>
       </li>
-      <li>{{ item.vote_average }}</li>
+      <li><span v-for="i in numberVote">&#9733;</span></li>
     </ul>
   </div>
 </template>

@@ -13,8 +13,8 @@ export default{
   <div>
     <ul>
       <li>{{  item.title }}</li>
-      <li>{{ item.originalTitle }}</li>
-      <li>{{ item.language }}</li>
+      <li>{{ item.original_title }}</li>
+      <li>{{ item.original_language }}</li>
       <li>{{ item.vote_average }}</li>
     </ul>
   </div>

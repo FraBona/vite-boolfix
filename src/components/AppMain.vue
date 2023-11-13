@@ -10,7 +10,8 @@
     },
     components: {
       CardFilm: CardFilm,
-    }
+    },
+    
   }
 </script>
 

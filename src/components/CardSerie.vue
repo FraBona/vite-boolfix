@@ -14,6 +14,9 @@ export default{
   computed: {
     srcFlag(){
       return this.store.flags[this.item.original_language];
+    },
+    addImage(){
+      return `https://image.tmdb.org/t/p/w92`+this.item.poster_path;
     }
   }
 }
@@ -24,7 +27,7 @@ export default{
   <div>
     <ul>
       <li>
-        <img :src="`https://image.tmdb.org/t/p/w92`+item.poster_path" alt="">
+        <img :src="addImage" alt="">
       </li>
       <li>{{ item.name }}</li>
       <li>{{  item.original_name }}</li>

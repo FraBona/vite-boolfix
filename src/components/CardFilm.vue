@@ -1,18 +1,24 @@
 <script>
 
+export default{
+  props: {
+    item: Object,
+  }
+}
+
 </script>
 
 <template>
-  <input type="text" placeholder="inserisci il film" >
-  <button>Invia</button>
 
   <div>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+    <ul>
+      <li>{{  item.title }}</li>
+      <li>{{ item.originalTitle }}</li>
+      <li>{{ item.language }}</li>
+      <li>{{ item.vote_average }}</li>
+    </ul>
   </div>
+  
 </template>
 
 

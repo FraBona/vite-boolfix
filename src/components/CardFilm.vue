@@ -24,6 +24,9 @@ export default{
 
   <div>
     <ul>
+      <li>
+        <img :src="`https://image.tmdb.org/t/p/w92`+item.poster_path" alt="">
+      </li>
       <li>{{  item.title }}</li>
       <li>{{ item.original_title }}</li>
       <li>

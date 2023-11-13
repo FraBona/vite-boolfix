@@ -1,6 +1,7 @@
 <script>
   import { store } from '../store.js';
-  import CardFilm from './CardFilm.vue'
+  import CardFilm from './CardFilm.vue';
+  import CardSerie from './CardSerie.vue'
   
   export default{
     data() {
@@ -10,6 +11,7 @@
     },
     components: {
       CardFilm: CardFilm,
+      CardSerie: CardSerie,
     },
     
   }
@@ -18,8 +20,10 @@
 <template>
   <div class="container">
     <h1>Movies</h1>
-
     <CardFilm v-for="movie in store.movies" :key="movie.id" :item="movie"></CardFilm>
+
+    <h1>Series</h1>
+    <CardSerie v-for="serie in store.series" :key="serie.id" :item="serie"></CardSerie>
 
     <div v-if="store.movies.length === 0">
       Non ci sono film

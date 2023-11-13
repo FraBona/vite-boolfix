@@ -21,11 +21,10 @@ export default{
 </script>
 
 <template>
-
   <div>
     <ul>
-      <li>{{  item.title }}</li>
-      <li>{{ item.original_title }}</li>
+      <li>{{ item.name }}</li>
+      <li>{{  item.original_name }}</li>
       <li>
         <img height="15" v-if="srcFlag" :src="srcFlag" alt="">
         <p v-else>{{ item.original_language }}</p>
@@ -33,7 +32,6 @@ export default{
       <li>{{ item.vote_average }}</li>
     </ul>
   </div>
-
 </template>
 
 

@@ -1,13 +1,11 @@
 <script>
   import axios from 'axios';
-  import CardFilm from './components/CardFilm.vue';
   import AppMain from './components/AppMain.vue';
   import AppHeader from './components/AppHeader.vue';
   import { store } from './store.js';
 
   export default {
     components: {
-      CardFilm: CardFilm,
       AppHeader: AppHeader,
       AppMain: AppMain,
     },
@@ -21,8 +19,8 @@
     methods: {
       fetchMovies(){
         if(store.searchText === ''){
-          this.store.movies = [];
           this.store.series = [];
+          this.store.movies = [];
           return 
         }
         
@@ -33,11 +31,22 @@
             language: 'it-IT'
           }
         }).then(res => {
-          const movies = res.data.results
+          const movies = res.data.results;
           this.store.movies = movies;
+        });
+        axios.get('https://api.themoviedb.org/3/search/tv',{
+          params: {
+            api_key: this.store.API_KEY,
+            query: this.store.searchText,
+            language: 'it-IT'
+          }
+        }).then(res => {
+          const series = res.data.results;
+          this.store.series = series;
         })
-      }
+      },
     }
+
   }
 
 </script>

@@ -15,8 +15,8 @@
 <template>
 
   <header >
-    <div class="container nav">
-      <h2>Boolfix</h2>
+    <div class="container-large nav">
+      <h2 id="title">BOOLFIX</h2>
       <input type="text" @keyup.enter="$emit('onSearch')" v-model="store.searchText" placeholder="Inserisci il film">
     </div>
   </header>
@@ -25,7 +25,14 @@
 
 <style lang="scss">
   .nav{
+    background-color: black;
     display: flex;
     justify-content: space-between;
+    padding: 20px;
+  }
+  
+  #title{
+    font-size: 38px;
+    color: red;
   }
 </style>

@@ -39,7 +39,7 @@ export default{
       <h1 v-else>SERIES</h1>
       <li>
         <img v-if="item.poster_path" :src="addImage" alt="" >
-        <p v-else>Non ci sono immagini</p>
+        <img v-else src="https://image.tmdb.org/t/p/w92/wwemzKWzjKYJFfCeiB57q3r4Bcm.png">
       </li>
       <li>{{ (cardType === 'MOVIE') ? item.title : item.name }}</li>
       <li>{{ (cardType === 'MOVIE') ? item.original_title : item.original_name}}</li>

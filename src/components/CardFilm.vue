@@ -48,7 +48,8 @@ export default{
         <p v-else>{{ item.original_language }}</p>
       </li>
       <li><span v-for="i in numberVote" v-if="numberVote > 0">&#9733;</span>
-          <span v-else>Nessuna valutazone</span>
+          <span v-for="i in 5 - numberVote">&#9734;</span>
+          
       </li>
     </ul>
   </div>

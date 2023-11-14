@@ -44,14 +44,19 @@ export default{
           <img v-else src="https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png">
           <div class="overlay" v-if="this.card === true"></div>
           <div class="description" v-if="this.card === true">
-            <li>{{ (cardType === 'MOVIE') ? item.title : item.name }}</li>
-            <li>{{ (cardType === 'MOVIE') ? item.original_title : item.original_name}}</li>
+            <li>Titolo: {{ (cardType === 'MOVIE') ? item.title : item.name }}</li>
+            <li>Titolo originale: {{ (cardType === 'MOVIE') ? item.original_title : item.original_name}}</li>
             <li>
-              <img height="15" v-if="srcFlag" :src="srcFlag" alt="">
-              <p v-else>{{ item.original_language }}</p>
+              <span>Produzione: <img height="15" v-if="srcFlag" :src="srcFlag" alt="">
+                                <p v-else>{{ item.original_language }}</p>
+              </span>
+              
             </li>
-            <li><span v-for="i in numberVote" v-if="numberVote > 0">&#9733;</span>
+            <li><span>Voto: <span v-for="i in numberVote" v-if="numberVote > 0" class="stair">&#9733;</span></span>
                 <span v-for="i in 5 - numberVote">&#9734;</span> 
+            </li>
+            <li>
+              Overview: {{ item.overview }}
             </li>
           </div>
         </div>
@@ -74,13 +79,17 @@ export default{
 
 <style scoped>
 
+.stair{
+  color: yellow;
+}
+
 .principal_image{
   position: relative;
 }
 
 .description{
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   position: absolute;
   top: 0;
   padding: 10px;
@@ -93,7 +102,7 @@ export default{
   width: 342px;
   height: 517px;
   position: absolute;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   top: 0;
 }
 </style>

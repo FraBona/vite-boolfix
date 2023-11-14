@@ -18,7 +18,7 @@
 </script>
 
 <template>
-  <div class="container-large ">
+  <div class="container-large bg-grey">
     <div class="card">
       <CardFilm v-for="movie in store.movies" :key="movie.id" :item="movie" :card-type="'MOVIE'" />
       <CardFilm v-for="movie in store.series" :key="movie.id" :item="movie" :card-type="'SERIES'" />
@@ -41,6 +41,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+.bg-grey{
+  height: 100vh;
 }
 </style>
 

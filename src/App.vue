@@ -53,9 +53,10 @@
 
 <template>
   <AppHeader @onSearch="fetchMovies"></AppHeader>
-  <AppMain></AppMain>
+  <AppMain class="main"></AppMain>
 </template>
 
 <style lang="scss">
   @use './style/general.scss'
+
 </style>
